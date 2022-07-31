@@ -1,0 +1,78 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <div class="parent" style="background-color: #F8F8F8;">
+        <div class="child">
+            <div nz-row class="imgDiv">
+                <h2>Add Avalibality</h2>
+            </div>
+
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                <div nz-row>
+                    <div nz-col nzSpan="24">
+                        <nz-form-item>
+                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+                                <nz-select formControlName="userId" nzShowSearch nzAllowClear
+                                    nzPlaceHolder="Select User">
+                                    <nz-option *ngFor="let userOption of allUsers" [nzLabel]="userOption.name"
+                                        [nzValue]="getString(userOption.id)"></nz-option>
+                                </nz-select>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan="24">
+                        <nz-form-item>
+                            <nz-form-control nzHasFeedback [nzXs]="24" [nzErrorTip]="errorFrom">
+                                <input nz-input type="number" placeholder="Available From" formControlName="hourFrom" />
+
+                                <ng-template #errorFrom let-control>
+                                    <ng-container *ngIf="control.hasError('required')">
+                                        This Input Is Required!
+                                    </ng-container>
+                                    <ng-container *ngIf="control.hasError('min')">
+                                        Minimum Value should be 1
+                                    </ng-container>
+                                    <ng-container *ngIf="control.hasError('max')">
+                                        Minimum Value should be 23
+                                    </ng-container>
+                                </ng-template>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div nz-row>
+                    <div nz-col nzSpan="24">
+                        <nz-form-item>
+                            <nz-form-control nzHasFeedback [nzErrorTip]="errorTo" [nzXs]="24">
+                                <input nz-input type="number" placeholder="Available To" formControlName="hourTo" />
+
+                                <ng-template #errorTo let-control>
+                                    <ng-container *ngIf="control.hasError('required')">
+                                        This Input Is Required!
+                                    </ng-container>
+                                    <ng-container *ngIf="control.hasError('min')">
+                                        Minimum Value should be 2
+                                    </ng-container>
+                                    <ng-container *ngIf="control.hasError('max')">
+                                        Minimum Value should be 24
+                                    </ng-container>
+                                </ng-template>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan="24">
+                        <nz-form-item>
+                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+                                <nz-date-picker style="width: 100%;" placeholder="Date" formControlName="date">
+                                </nz-date-picker>
+
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+
+
+
+                <button nz-button class="login-form-button login-form-margin" nzType="primary">Add Avalibality</button>
+            </form>
+        </div>
+    </div>
+</nz-spin>

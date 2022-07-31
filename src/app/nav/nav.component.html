@@ -1,31 +1,28 @@
 <div >
     <nz-header class="main-header" nz-row nzType="flex">
         <div>
-            <!-- <a routerLink="">
-                <img class="logo" style="width: 80px;  padding-left: 20px;" src="../../assets/logo.png" alt="logo" />
-            </a> -->
+            <a style="margin-left: 10px;" routerLink="">
+               Interview Calender
+            </a>
         </div>
         <div class="nav-links">
           
             <a nz-button nzType="link"  routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
-            <a nz-button nzType="link" routerLinkActive="active">Add User</a>
-            <a nz-button nzType="link" routerLink="/signup" routerLinkActive="active">Add Avalibality Slot</a>
+            <a nz-button nzType="link" routerLink="/admin/add-user" routerLinkActive="active">Add User</a>
+            <a nz-button nzType="link" routerLink="/admin/add-availability" routerLinkActive="active">Add Avalibality</a>
         </div>
     </nz-header>
 
     <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
         <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
             <li nz-menu-item>
-                <a nz-button nzType="link" routerLinkActive="active">About</a>
+                <a nz-button nzType="link" routerLinkActive="active">Dashboard</a>
             </li>
             <li nz-menu-item>
-                <a nz-button nzType="link" routerLinkActive="active">Contact</a>
+                <a nz-button nzType="link" routerLinkActive="active">Add User</a>
             </li>
             <li nz-menu-item>
-                <a nz-button nzType="link" routerLink="/signup" routerLinkActive="active">Sign Up</a>
-            </li>
-            <li nz-menu-item>
-                <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
+                <a nz-button nzType="link" routerLink="/signup" routerLinkActive="active">Add Avalibality Slot</a>
             </li>
 
         </ul>

@@ -1,0 +1,39 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <div class="parent" style="background-color: #F8F8F8;">
+        <div class="child">
+            <div nz-row class="imgDiv">
+                <h2>Post Question</h2>
+            </div>
+
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                <div nz-row>
+                    <div nz-col nzSpan="24">
+                        <nz-form-item>
+                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+                                <input nz-input placeholder="Name" formControlName="name" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan="24">
+                        <nz-form-item>
+                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+
+                                <nz-select formControlName="userRole" nzShowSearch nzAllowClear
+                                    nzPlaceHolder="Select user role">
+                                    <nz-option nzLabel="Candidate" nzValue="CANDIDATE"></nz-option>
+                                    <nz-option nzLabel="Interviewer" nzValue="INTERVIEWER"></nz-option>
+
+                                </nz-select>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+
+
+
+                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Post
+                    Question</button>
+            </form>
+        </div>
+    </div>
+</nz-spin>

@@ -1,0 +1,26 @@
+.child {
+    padding: 50px;
+    position: absolute;
+    width: 680px;
+    background-color: white;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: 1px 1px 15px -7px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 22px;
+
+}
+
+.subchild {
+    position: absolute;
+    width: 680px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 70px;
+    border-radius: 5px;
+    margin-bottom: 22px;
+
+}

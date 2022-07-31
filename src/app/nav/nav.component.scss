@@ -11,11 +11,11 @@ $white-one: #fcfcfc;
   background-color: $primary-color;
   height: auto;
 
-//   @media only screen and (min-width: 768px) {padding: 0px 20px 5px;}
+  //   @media only screen and (min-width: 768px) {padding: 0px 20px 5px;}
 
-//   @include for-tablet-only {
-//     padding: 0px 20px 5px;
-//   }
+  //   @include for-tablet-only {
+  //     padding: 0px 20px 5px;
+  //   }
 
   a.active {
     background: $secondary-color;
@@ -50,37 +50,38 @@ $white-one: #fcfcfc;
   background: $secondary-color;
 }
 
-@media only screen and (max-width: 768px) {  
-    .main-header {
-        .nav-links {
-            display: none;
-         
-        }
-      }
-}
-
-
-@media only screen and (max-width: 768px) { 
+@media only screen and (max-width: 768px) {
+  .main-header {
     .nav-links {
-            list-style-type: none;
-            padding: 15px 0px;
-        
-            a {
-              font-weight: 300;
-              font-size: 16px;
-              border-radius: 0px;
-              color: $White;
-              display: block;
-              width: 100%;
-              text-align: left;
-        
-              &:hover {
-                color: $White;
-                background: $secondary-color;
-              }
-            }
-          }
+      display: none;
+
+    }
+  }
 }
+
+
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    list-style-type: none;
+    padding: 15px 0px;
+
+    a {
+      font-weight: 300;
+      font-size: 16px;
+      border-radius: 0px;
+      color: $White;
+      display: block;
+      width: 100%;
+      text-align: left;
+
+      &:hover {
+        color: $White;
+        background: $secondary-color;
+      }
+    }
+  }
+}
+
 // @include for-ipad-only {
 //   .nav-links {
 //     list-style-type: none;
@@ -111,11 +112,11 @@ $white-one: #fcfcfc;
 //   }
 // }
 
-@media only screen and (min-width: 768px) { 
-    .mobile-sidenav {
- 
+@media only screen and (min-width: 768px) {
+  .mobile-sidenav {
+
     display: none;
-}
+  }
 }
 
 ::ng-deep.ant-layout-sider-zero-width-trigger {
@@ -152,9 +153,9 @@ $white-one: #fcfcfc;
   background-color: $primary-color;
   height: auto;
 
-//   @include for-tablet-only {
-//     padding: 0px 20px 5px;
-//   }
+  //   @include for-tablet-only {
+  //     padding: 0px 20px 5px;
+  //   }
 
   img.logo {
     width: 100px;
@@ -351,9 +352,10 @@ $white-one: #fcfcfc;
 }
 
 ::ng-deep {
+
   .ant-menu-item:active,
   .ant-menu-submenu-title:active,
-  .ant-menu-submenu > .ant-menu {
+  .ant-menu-submenu>.ant-menu {
     background-color: transparent;
   }
 
@@ -459,9 +461,9 @@ $white-one: #fcfcfc;
   background: #141a33;
   padding: 0px;
 
-//   @include for-tablet-only {
-//     padding: 0px 20px 5px;
-//   }
+  //   @include for-tablet-only {
+  //     padding: 0px 20px 5px;
+  //   }
 }
 
 img.logo {
@@ -487,4 +489,3 @@ img.logo {
     }
   }
 }
-

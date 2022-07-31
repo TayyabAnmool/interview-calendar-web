@@ -1,1 +1,50 @@
-<p>dashboard works!</p>
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <div style="min-height: 91vh; background-color: #F8F8F8;">
+        <div class="child">
+            <form nz-form [nzLayout]="'inline'" [formGroup]="searchForm" (ngSubmit)="submitForm()" nz-row>
+                <nz-form-item nz-col style="width: 180px;">
+                    <nz-form-control nzErrorTip="Please input your candidate!">
+
+                        <nz-select formControlName="candidateId" nzShowSearch nzAllowClear
+                            nzPlaceHolder="Select Candidate">
+                            <nz-option *ngFor="let userOption of candidates" [nzLabel]="userOption.name"
+                                [nzValue]="getString(userOption.id)"></nz-option>
+                        </nz-select>
+
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item style="width: 180px;">
+                    <nz-form-control nzErrorTip="Please input your interviewers!">
+
+                        <nz-select formControlName="interviewerIds" nzShowSearch nzAllowClear nzMode="multiple"
+                            nzPlaceHolder="Select interviewers">
+                            <nz-option *ngFor="let userOption of interviewers" [nzLabel]="userOption.name"
+                                [nzValue]="getString(userOption.id)"></nz-option>
+                        </nz-select>
+
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control>
+                        <button nz-button nzType="primary" [disabled]="!searchForm.valid">Check Availability</button>
+                    </nz-form-control>
+                </nz-form-item>
+            </form>
+        </div>
+
+        <div class="subchild">
+            <nz-empty *ngIf="searchResults==null || searchResults.length==0"></nz-empty>
+            <nz-card nzHoverable style="width:680px; margin-top: 10px;" *ngFor="let result of searchResults">
+                <nz-card-meta [nzTitle]="result.interviewerName">
+                </nz-card-meta>
+                <div style="margin-top: 20px;">
+                    <div nz-card-grid *ngFor="let slot of result.availabilitySlotDtos"
+                        style="width: 50%; text-align: center;">
+                        From {{slot.hourFrom}} To {{slot.hourTo}} on {{slot.date | date: 'MMMM d, y'}}</div>
+                </div>
+            </nz-card>
+
+        </div>
+    </div>
+
+</nz-spin>
